@@ -1,0 +1,11 @@
+{% extends 'appli/base.html' %}
+
+{% block content %}
+    <section class="intro">
+        <h2>OOps ! Une erreur s'est produite !</h2>
+        <p>(erreur 500)</p>
+    </section>
+    <figure class="error-image">
+        <img src="{%static 'appli/img/500.jpg' %}" alt="RS500" />
+    </figure>
+{% endblock %}

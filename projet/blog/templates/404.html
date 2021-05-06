@@ -1,0 +1,11 @@
+{% extends 'appli/base.html' %}
+
+{% block content %}
+    <section class="intro">
+        <h2>Désolé, nous ne pouvons pas répondre à votre demande ! Veuillez réessayer.</h2>
+        <p>(erreur 404)</p>
+    </section>
+    <figure class="error-image">
+        <img src="{%static 'appli/img/404.jpg' %}" alt="404" />
+    </figure>
+{% endblock %}

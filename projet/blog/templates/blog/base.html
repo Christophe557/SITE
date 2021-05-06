@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta charset="utf-8" />
+        {% load static %}
+        <!-- css -->
+        <link rel="stylesheet" href="{% static 'blog/css/style.css' %}" />
+        <link rel="stylesheet" media="screen and (max-width:1080px)" href="{% static 'blog/css/style_responsive.css' %}" />
+        <!-- <link rel="stylesheet" href="../../static/blog/css/style.css" /> -->
+        <link rel="icon" type="image/x-icon" href="{%static 'blog/img/flavicon.png' %}" />
+        <title>ecosketch</title>
+    </head>
+    <body>
+        <div id="bloc-page">    
+            <header>
+                <div id="logo">
+                    <a href="{% url 'index' %}"><img src="{%static 'blog/img/logo.png' %}" alt="logo" /></a>
+                </div>
+
+                <ul class="navbar">
+                    <li><a href="{% url 'index' %}" class="bouton_menu">accueil</a></li>
+                    <li><a href="{% url 'index' %}" class="bouton_menu">blog</a></li>
+                    <li><a href="{% url 'index' %}" class="bouton_menu">solutions</a></li>
+                    <li><a href="{% url 'index' %}" class="bouton_menu">à propos</a></li>
+                </ul>
+    
+            </header>
+            <main>
+                {% block content %}{% endblock %}
+            </main>
+            <footer>
+                <div class="contenu_footer">
+                    <div class="description">
+                        <h3>ecosketch</h3>
+                        <p>Conseil en écoconception et en ingénierie avec pour objectif de réduire l'impact environnemental des produits industriels, et particulièrement leur impact sur les émissions de gaz à effet de serre et le réchauffement climatique.</p>
+                    </div>
+                    <div class="liens">
+                        <h3>LIENS</h3>
+                        <ul class="liste-activites">
+                            <li><a href="{% url 'index' %}" class="lien_footer">accueil</a></li>
+                            <li><a href="{% url 'index' %}" class="lien_footer">blog</a></li>
+                            <li><a href="{% url 'index' %}" class="lien_footer">solutions</a></li>
+                            <li><a href="{% url 'index' %}" class="lien_footer">à propos</a></li>
+                            <li><a href="{% url 'index' %}" class="lien_footer">mentions légales</a></li>
+                        </ul>
+                    </div>
+                    <div class="newsletter">
+                        <h3>NEWSLETTER</h3>
+                    </div>
+                </div>
+                <p>Copyright &copy 2021 ecosketch</p>
+            </footer>
+    
+        </div>
+    </body>
+</html>

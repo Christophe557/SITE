@@ -1,0 +1,171 @@
+/* >>>>> RESPONSIVE DESIGN <<<<<< */
+#bloc-page
+{
+    min-width:600px;
+}
+
+header
+{
+    position:static;
+    justify-content:space-around;
+}
+
+#logo img 
+{
+    width:240px;
+    height:55px;
+}
+
+.navbar
+{
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:flex-end;
+}
+
+.bouton_menu 
+{
+    width:auto;
+    font-size:1.0em;
+    height:20px;
+    margin:0px;
+    padding:0px;
+}
+
+.bandeau_vide
+{
+    display:none;
+}
+
+.intro
+{
+    height:250px;
+}
+
+.illustration img
+{
+    display:none;
+}
+
+.texte h2
+{  
+    
+    font-size:1.3em;
+    font-weight:bold;
+    padding-bottom:5px;
+    margin:0px;
+}
+
+.texte h3
+{  
+    
+    font-size:1.0em;
+    padding-bottom:10px;
+    margin:0px;
+}
+
+.bouton_cta
+{
+    border-radius:20px;
+    width:288px;
+    height:40px;
+    font-size:1.2em;
+}
+
+.bandeau-blog
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+    background-color:white;
+    margin:0;
+}
+
+.bouton-blog-tous
+{
+    display:flex;
+    width:200px;
+    height:30px;
+    margin:0px;
+    justify-content:center;
+    align-items:center;
+    color: #2C3E50; 
+    font-size:1.0em;
+    border-radius:20px;
+    background-color:#E7E7EE;
+ 
+}
+
+.bouton-blog
+{
+    display:flex;
+    width:300px;
+    height:20px;
+    margin:0px;
+    justify-content:center;
+    align-items:center;
+    color: #2C3E50; 
+    font-size:1.0em;
+}
+
+.separation
+{
+    display:inline;
+    color: #2C3E50; 
+    margin:0;
+}
+
+.derniers-articles
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+.mini-article
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+ 
+    width:auto;
+    margin:10px 0px 10px 0px;
+}
+
+.mini-article img
+{
+    width:300px;
+    height:auto;
+}
+
+.mini-article h3
+{
+    width:auto;
+    margin:10px 50px 10px 50px;
+    text-align:justify;
+    overflow:auto;
+    font-size:1.2em;
+    word-wrap:break-word;
+    font-weight:bold;
+}
+
+.mini-article p
+{
+    width:auto;
+    margin:0px 50px 0px 50px;
+    text-align:justify;
+    overflow:auto;
+    font-size:1.0em;
+    word-wrap:break-word;
+}
+
+.description
+{
+    max-width:400px;
+}
+
+
+
