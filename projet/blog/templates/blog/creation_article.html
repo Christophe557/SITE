@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="bandeau_vide">
+</div>
+<h2> Formulaire de création d'un nouvel article. </h2>
+{% if envoi_art %}Article créé !{% endif %}
+
+<form action="{% url 'blog:creation_article' %}" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="submit"/>
+</form>
+{% endblock %}

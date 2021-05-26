@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="mise_en_page_listing">
+    {% include 'blog/nav_blog.html' %}
+    {% include 'blog/list.html' with list_title=titre_page %}
+</div>
+{% endblock %}
+

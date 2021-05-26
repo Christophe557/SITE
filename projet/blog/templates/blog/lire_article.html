@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="mise_en_page_article">
+
+    {% include 'blog/nav_blog.html' %}
+    <article>
+         <h2 id="titre_article">{{article.titre}}</h2>
+
+         {% for contenu in contenus %}
+
+             {% if contenu.typecontenu.nom == "sommaire" %}
+                <ul class="sommaire">
+                    <h3>{{contenu.texte}}</h3>
+                    {% for soustitre in soustitres %}
+                    <li><a href="{{soustitre.ancre }}">{{soustitre.texte}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% if contenu.typecontenu.nom == "sous-titre" %}
+               <h3 id="{{contenu.id}}">{{contenu.texte}}</h3>
+            {% endif %}
+
+            {% if contenu.typecontenu.nom == "paragraphe" %}
+                <p id="{{contenu.id}}">{{contenu.texte}}</p>
+            {% endif %}
+
+            {% if contenu.typecontenu.nom == "image" %}
+                <img id="{{contenu.id}}" src="{{ contenu.image.url }}" alt="{{contenu.titre}}">
+                <h4>{{contenu.texte}}</h4>
+            {% endif %}
+
+        {% endfor %}
+        <div class=date>Publié le {{article.created_at}}.</div>
+        <a href="#titre_article" id="slideup">&#x25B2</a>
+     </article>
+</div>
+{% endblock %}
+

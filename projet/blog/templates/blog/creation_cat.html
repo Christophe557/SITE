@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="bandeau_vide">
+</div>
+<h2> Formulaire de création d'une nouvelle catégorie. </h2>
+{% if envoi_cat %}Categorie créée !{% endif %}
+
+<form action="{% url 'blog:creation_cat' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="submit"/>
+</form>
+{% endblock %}

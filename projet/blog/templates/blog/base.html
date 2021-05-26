@@ -6,6 +6,7 @@
         {% load static %}
         <!-- css -->
         <link rel="stylesheet" href="{% static 'blog/css/style.css' %}" />
+        <link rel="stylesheet" href="{% static 'blog/css/style_edition_article.css' %}" />
         <link rel="stylesheet" media="screen and (max-width:1080px)" href="{% static 'blog/css/style_responsive.css' %}" />
         <!-- <link rel="stylesheet" href="../../static/blog/css/style.css" /> -->
         <link rel="icon" type="image/x-icon" href="{%static 'blog/img/flavicon.png' %}" />
@@ -17,13 +18,22 @@
                 <div id="logo">
                     <a href="{% url 'index' %}"><img src="{%static 'blog/img/logo.png' %}" alt="logo" /></a>
                 </div>
+                
+                <div id="navbar">
+                    <ul id="menu">
+                        <li><a href="{% url 'index' %}" class="bouton_menu">accueil</a></li>
+                        <li><a href="{% url 'blog:listing' %}" class="bouton_menu">ressources</a></li>
+                        <li><a href="{% url 'index' %}" class="bouton_menu">solutions</a></li>
+                        <li><a href="{% url 'blog:apropos' %}" class="bouton_menu">à propos</a></li>
+                    </ul>
+                </div>
 
-                <ul class="navbar">
-                    <li><a href="{% url 'index' %}" class="bouton_menu">accueil</a></li>
-                    <li><a href="{% url 'index' %}" class="bouton_menu">blog</a></li>
-                    <li><a href="{% url 'index' %}" class="bouton_menu">solutions</a></li>
-                    <li><a href="{% url 'index' %}" class="bouton_menu">à propos</a></li>
-                </ul>
+                <a href="" id="bouton_menu_deroulant">
+                    <div class='barre_bouton'> </div>
+                    <div class='barre_bouton'> </div>
+                    <div class='barre_bouton'> </div>
+                    <div id='croix_carree'>&#10799</div>
+                </a>
     
             </header>
             <main>
@@ -39,7 +49,7 @@
                         <h3>LIENS</h3>
                         <ul class="liste-activites">
                             <li><a href="{% url 'index' %}" class="lien_footer">accueil</a></li>
-                            <li><a href="{% url 'index' %}" class="lien_footer">blog</a></li>
+                            <li><a href="{% url 'index' %}" class="lien_footer">ressources</a></li>
                             <li><a href="{% url 'index' %}" class="lien_footer">solutions</a></li>
                             <li><a href="{% url 'index' %}" class="lien_footer">à propos</a></li>
                             <li><a href="{% url 'index' %}" class="lien_footer">mentions légales</a></li>
@@ -47,11 +57,13 @@
                     </div>
                     <div class="newsletter">
                         <h3>NEWSLETTER</h3>
-                    </div>
-                </div>
+                     </div>
+              </div>
                 <p>Copyright &copy 2021 ecosketch</p>
             </footer>
     
         </div>
+        <script src="{% static 'blog/js/menu_app.js' %}"></script>
+        <script src="{% static 'blog/js/sommaire_app.js' %}"></script>
     </body>
 </html>

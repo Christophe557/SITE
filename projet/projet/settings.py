@@ -14,8 +14,8 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# BASE_DIR = .../SITE/projet
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -122,17 +122,34 @@ USE_L10N = True
 USE_TZ = True
 
 
+# PROJECT_ROOT = .../SITE/projet/projet
+PROJECT_ROOT = Path(__file__).resolve().parent
+
+
+# Configuration des fichiers statiques:
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+# définit le chemin qui sera appelé dans les gabarits par:
+# {% load static %}
+# dans le chemin de l'appli : SITE/projet/blog/static
 STATIC_URL = '/static/'
+
+# configuration fichiers statiques en développement :
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+
+# pour le déploiement (collectstatic) : variable à modifier
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Configuration des media :
+MEDIA_URL = '/media/'
+#MEDIA_URL = os.path.join(BASE_DIR, 'media/') 
+#MEDIA_URL = '/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+
 
 # pour Django debug toolbar
 INTERNAL_IPS = ['127.0.0.1']
 
-# configuration fichiers statiques en développement :
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

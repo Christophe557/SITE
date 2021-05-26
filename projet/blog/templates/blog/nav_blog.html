@@ -1,0 +1,20 @@
+{% load static %}
+
+<ul class="navbar-categories">
+    <li><a href="{% url 'blog:listing' %}" class="bouton-blog-tous">tous</a></li>
+    {% for categorie in categories %}
+        {% if categorie.nom == categorie_select %}
+            <li><a href="{% url 'blog:listing_cat' cat=categorie.nom %}" class="bouton-blog-light">{{ categorie.nom }}</a></li>
+        {% else %}
+            <li><a href="{% url 'blog:listing_cat' cat=categorie.nom %}" class="bouton-blog">{{ categorie.nom }}</a></li>
+        {% endif %}
+    {% endfor %}
+
+    <li><div class="searchbar">
+        <form class="champ_recherche" action={% url 'blog:listing_search' %} method='get' accept-charset="utf-8">
+            <input type="search" id="texte-recherche" name='query'>
+            <input type="image" id="bouton-loupe" src="{%static 'blog/img/loupe.png' %}" alt='rechercher'>
+        </form>
+    </div></li>
+</ul>
+

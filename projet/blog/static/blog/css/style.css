@@ -4,6 +4,8 @@ body
     font-family:  helvetica;
     font-weight: normal;
     font-style: normal;
+    margin:0;
+    padding-top:0;
 }
 
 h1, h2, h3
@@ -18,10 +20,11 @@ h1, h2, h3
     justify-content:space-between;
     width:100%;
     max-width:1980px;
-/*    height:600px;*/
+    min-height:400px;
 /*    margin:auto; */
     background-color:white;
-/*    border:4px purple solid;*/
+    margin-top:75px;
+    padding-top:0;
 }
 
 a
@@ -41,9 +44,13 @@ header
     align-items:flex-end;
     width:100%;
     max-width:1980px;
+    height:75px;
     background-color:white;
+    margin-top:0px;
+    padding-top:0px;
     margin-bottom:0px;
     padding-bottom:0px;
+    z-index:2;
 }
 
 
@@ -52,10 +59,7 @@ header
 
 #logo
 {
-    display:flex;
-    flex-direction:row;
-    justify-content:flex-start;
-
+    margin:10px 0px 5px 30px;
 }
 #logo img 
 {
@@ -63,30 +67,24 @@ header
     height:55px;
 }
 
-.titre
-{
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-}
-
-
-.titre h1 a
-{
-    font-size:1.5em;
-    color:blue;
-}
-
-.titre h1
-{
-    margin:0 0 0 0;
-}
-
     
 /*  <=== fin logo */
 
 /*  barre de navigation début ===>  */
-.navbar
+
+
+#navbar
+{
+    display:block;
+}
+
+
+#bouton_menu_deroulant
+{
+    display:none;
+}
+
+#menu
 {
     display:flex;
     flex-direction:row;
@@ -109,7 +107,7 @@ li
     margin:5px 5px 5px 5px;
     align-items:center;
     justify-content:space-around;
-    color:black;
+    color:#2C3E50;
     font-size:1.2em;
 }
 
@@ -132,19 +130,13 @@ main
     display:flex;
     flex-direction:column;
     justify-content:space-between;
+    margin-top:0px;
 
 }
-
-.bandeau_vide
-{
-    height:60px;
-    background-color:#E7E7EE;
-}
-
 
 /*  bloc intro début ===> */
 
-.intro
+#intro
 {   
     display:flex;
     flex-direction:row;
@@ -152,7 +144,9 @@ main
     align-items:center;
     height:350px;
     font-weight: normal;
-    background-color:#E7E7EE;
+    margin-top:0;
+    margin-bottom:0px;
+    background-color:#E7E7EE; 
 }
 
 .usp
@@ -162,6 +156,7 @@ main
     justify-content:space-between;
     align-items:stretch;
     max-width:600px;
+    padding:0px 20px 0px 20px;
 }
 
 .texte h2
@@ -191,7 +186,7 @@ main
 .bouton_cta
 {
     display:flex;
-    border-radius:20px;
+    border-radius:15px;
     width:320px;
     height:50px;
     background-color:#FE5A02;
@@ -211,55 +206,75 @@ a.bouton_cta:hover
 .illustration img
 {
     width:200px;
-    margin: 20px;
+    margin: 20px 0px 20px 0px;
+    border-radius:10px;
 }
 
 /*  <=== fin bloc intro */
 
 /* bloc presentation_blog debut===> */
 
-.presentation-blog
+.presentation-blog, .mise_en_page_listing, .mise_en_page_article
 {
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
-    align-items:center;
-    margin-top:10px;
+    align-items:stretch;
+    margin-top:15px;
 }
 
-.separation
-{
-    display:none;
-}
-
-.bandeau-blog
+.navbar-categories
 {
     display:flex;
     flex-direction:row;
     justify-content:space-around;
     align-items:center;
-    max-width:1900px;
     padding:10px;
-    background-color:white;
+    background-color:#E7E7EE;
     margin:0;
+    flex-basis:50%;
 }
 
 .bouton-blog-tous
 {
     display:flex;
-    width:200px;
+    width:60px;
     height:30px;
     margin:5px 5px 5px 5px;
     justify-content:center;
     align-items:center;
     color: #2C3E50; 
     font-size:1.0em;
-    border-radius:20px;
-    background-color:#E7E7EE;
- 
+    border-radius:10px;
+    background-color:white;
 }
 
-.bouton-blog
+/*---------------*/
+.presentation-blog .navbar-categories
+{
+    background-color:white;
+} 
+
+
+.presentation-blog .bouton-blog-tous
+{
+    background-color:#E7E7EE;
+} 
+/*---------------*/
+
+
+.mise_en_page_listing .navbar-categories
+{
+    background-color:#E7E7EE;
+} 
+
+
+.mise_en_page_listing .bouton-blog-tous
+{
+    background-color:white;
+} 
+
+.bouton-blog-light
 {
     display:flex;
     width:200px;
@@ -267,20 +282,113 @@ a.bouton_cta:hover
     margin:5px 5px 5px 5px;
     justify-content:center;
     align-items:center;
+    color: white; 
+    font-size:1.0em;
+    font-weight:bold;
+    border-radius:10px;
+    background-color:#FE5A02;
+}
+
+.bouton-blog
+{
+    display:flex;
+/*    width:200px;*/
+    height:30px;
+    margin:5px 5px 5px 5px;
+    justify-content:center;
+    align-items:center;
     color: #2C3E50; 
     font-size:1.0em;
+/*    border:2px blue solid; */
+
 }
 a.bouton-blog-tous:hover, a.bouton-blog:hover
 {
     font-weight:bold;
 }
 
-.derniers-articles
+.presentation-blog .searchbar
+{
+    display:none;
+}
+
+.presentation-blog .titrebar
+{
+    display:none;
+}
+
+.searchbar
+{
+    text-align:center;
+    margin-top:10px;
+}
+
+.champ_recherche
+{
+    position:relative;
+    width:160px;
+    z-index:1;
+}
+
+
+#texte-recherche
+{
+    background-color:#E7E7EE;
+    width:75px;
+    border-style:none;
+    border-bottom:1px black groove;
+}
+
+#texte-recherche:hover
+{
+    border-bottom:1px #FE5A02 solid;
+    color: #2C3E50;
+}
+
+#texte-recherche:focus
+{
+    border-bottom:2px #FE5A02 solid;
+    outline:0 none;
+    width:120px;
+    color: #2C3E50;
+} 
+
+#bouton-loupe
+{
+    margin-top: -13px;
+	position: absolute;
+    height:25px;
+	top: 50%;
+	right: 5px;
+}
+
+
+.titrebar
+{
+    font-size:1.0em;
+    font-weight:bold;
+    text-align:center;
+}
+/*
+.centrage-liste-article
+{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    border:2px red solid;
+}
+*/
+
+.liste_articles
 {
     display:flex;
     flex-direction:row;
     justify-content:center;
     align-items:flex-start;
+    flex-wrap:wrap;
+    width:auto;
+    flex-shrink:auto;
+    flex-grow:1;
 }
 
 .mini-article
@@ -290,6 +398,7 @@ a.bouton-blog-tous:hover, a.bouton-blog:hover
     justify-content:flex-start;
     align-items:flex-start;
     width:300px;
+    padding:10px;
     margin:10px 20px 10px 20px;
 }
 
@@ -297,6 +406,7 @@ a.bouton-blog-tous:hover, a.bouton-blog:hover
 {
     width:300px;
     height:200px;
+    border-radius:10px;
 }
 
 .mini-article h3
@@ -305,6 +415,7 @@ a.bouton-blog-tous:hover, a.bouton-blog:hover
     margin:10px 0px 10px 0px;
     text-align:justify;
     overflow:auto;
+    color:black;
     font-size:1.2em;
     word-wrap:break-word;
     font-weight:bold;
@@ -316,6 +427,7 @@ a.bouton-blog-tous:hover, a.bouton-blog:hover
     margin:0px;
     text-align:justify;
     overflow:auto;
+    color:black;
     font-size:1.0em;
     word-wrap:break-word;
 }
@@ -323,21 +435,40 @@ a.bouton-blog-tous:hover, a.bouton-blog:hover
 .mini-article .bouton_suite
 {
     width:120px;
+    height:20px;
     margin:10px 0px 10px 0px;
+    padding:5px 3px 0px 5px;
     text-align:justify;
     overflow:auto;
-    font-size:1.0em;
+    font-size:0.9em;
     word-wrap:break-word;
     color:black;
     background-color:#E7E7EE;
+    border-radius:3px;
 }
+
+.mini-article .date
+{
+    margin-top:5px;
+    color:black;
+    font-style:italic;
+    font-size:0.9em;
+}
+
+.mini-article:hover
+{
+    background:linear-gradient(to top, #E8FEF8, #F8FAFA);
+    border-radius:17px;
+}    
 
 a.bouton_suite:hover
 {
     font-weight:bold;
+    color:white;
+    background-color:#FE5A02;
 }
 
-/* <=== fin bloc presentaion_blog */
+/* <=== fin bloc presentation_blog et mise_en_page_listing */
 
 /* <=== fin BLOC MAIN */
 
@@ -394,5 +525,26 @@ a.lien_footer:hover
 /* <=== fin FOOTER */
 
 /*=================================================*/
+
+
+.lien_saisie
+{
+    color:blue;
+}
+
+a.lien_saisie:hover
+{
+    font-weight:bold;
+}
+
+.creation-models
+{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:center;
+    text-align:justify;
+    padding-top:10px;
+}
 
 

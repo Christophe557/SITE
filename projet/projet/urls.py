@@ -25,9 +25,9 @@ from blog import views
 
 
 urlpatterns = [
-#    path('admin/', admin.site.urls),
     re_path(r'^$', views.index, name='index'),
-#    re_path(r'^blog/', include('blog.urls', namespace='blog')),
+    re_path(r'^blog/', include('blog.urls', namespace='blog')),
+    re_path(r'^admin_4Lfg5noe5zUZ4/', admin.site.urls),
 
 #---- activation en prod pour servir fichiers STATIC ------------
 #---- en dév (serveur local Django) quand DEBUG=False -----------
@@ -40,7 +40,11 @@ urlpatterns = [
 
 if settings.DEBUG:
     import debug_toolbar
+    from django.conf.urls.static import static
+    from django.conf import settings
 
     urlpatterns = [
             re_path(r'^__debug__/', include(debug_toolbar.urls)),
             ] + urlpatterns
+
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

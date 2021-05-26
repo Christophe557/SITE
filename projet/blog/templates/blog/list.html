@@ -1,0 +1,22 @@
+{% load static %}
+
+<div class="titrebar">
+    <h2 class="intro-text text-center">{{ list_title }} </h2>
+</div>
+
+<div class="liste_articles">
+{% for article in articles %}
+    <a href="{% url 'blog:lire_article' article_id=article.id %}">
+    <div class="mini-article">
+        <img src="{{ article.miniature.url }}" alt="image">
+        <h3>{{ article.titre }}</h3>
+        <p>{{ article.resume }}</p>
+        <div class="date">Publié le {{ article.created_at }}</div>
+        <a href="{% url 'blog:lire_article' article_id=article.id %}" class="bouton_suite">Lire l'article ...</a> 
+    </div>           
+    </a>
+    {% if forloop.counter|divisibleby:3 %}<div class="clearfix"></div>{% endif %}
+{% endfor %}
+</div>
+
+

@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="bandeau_vide">
+</div>
+<div class="creation-models">
+    <h3>CREATION D ARTICLES</h3>
+    <p> ******* page privée **********</p>
+    <p> *** doit être protégée par un pwd ***</p>
+    <ul>
+        <li><a href="{% url 'blog:creation_cat' %}" class="lien_saisie">création catégorie</a></li>
+        <li><a href="{% url 'blog:creation_type' %}" class="lien_saisie">création de type de contenu</a></li>
+        <li><a href="{% url 'blog:creation_article' %}" class="lien_saisie">création article</a></li>
+        <li><a href="{% url 'blog:creation_contenu' %}" class="lien_saisie">création contenu</a></li>
+    </ul>
+</div>
+{% if envoi_cat %}Categorie créée !{% endif %}
+{% if envoi_art %}Article créé !{% endif %}
+{% endblock %}
+  
