@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import Http404
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db import transaction, IntegrityError
 from django.db.models import Q
@@ -95,8 +96,11 @@ def listing_search(request):
 
 def lire_article(request, article_id):
 
-    # sélection de l'article à afficher :
-    article = Article.objects.get(id=article_id)
+#    # sélection de l'article à afficher :
+#    # si l'article existe mais n'est pas publié (publie = False),
+#    # on ne peut pas le lire car on génère une erreur 404
+
+    article = get_object_or_404(Article, id=article_id, publie=True)
 
     # liste des contenus de l'article, en excluant les contenus de type 'image' dont le champ image est vide 
     # pour éviter l'erreur d'exécution du html : ValueError: The 'image' attribute has no file associated with it

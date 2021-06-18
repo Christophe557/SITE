@@ -25,5 +25,5 @@ V0.1  26/05/2021 - Développement - application blog:
                                     model.py: modèles article, contenu, catégorie, typecontenu
                                     admin.py 
 
-
+V0.2  18/06/2021 - Développement - application blog : ajout des fichiers de tests
 

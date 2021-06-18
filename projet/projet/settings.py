@@ -111,6 +111,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
+# tests avec pytest
+# DJANGO_SETTINGS_MODULE = test_settings
+
+
 LANGUAGE_CODE = 'fr'
 
 TIME_ZONE = 'Europe/Paris'
@@ -155,3 +159,7 @@ INTERNAL_IPS = ['127.0.0.1']
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# pour stocker 404.html :
+TEMPLATES_DIRS = [os.path.join(BASE_DIR, 'templates')]
